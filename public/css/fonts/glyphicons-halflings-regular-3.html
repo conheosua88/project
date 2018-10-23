@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#"   lang="vi">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>QUẢN TRỊ HỆ THỐNG WEBSITE - Error</title>
+	<meta name="keywords" content="Công ty cổ phần du lịch và dịch vụ Hải Phòng" />
+	<meta name="description" content="Công ty cổ phần du lịch và dịch vụ Hải Phòng" />
+	<base href="http://haiphongtoserco.com.vn/" target="_self"/>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<link rel="icon" href="images/favicon/3581logo-do.jpg">
+	<meta property="og:title" content="Công ty cổ phần du lịch và dịch vụ Hải Phòng">
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="Công ty cổ phần du lịch và dịch vụ Hải Phòng">
+	<meta property="og:image" content="http://haiphongtoserco.com.vn/images/favicon/3581logo-do.jpg">
+	<meta property="og:site_name" content="Công ty cổ phần du lịch và dịch vụ Hải Phòng">
+	<meta property="og:url" content="http://haiphongtoserco.com.vn/css/fonts/glyphicons-halflings-regular.woff">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=vietnamese" rel="stylesheet">
+
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css" />
+	<script type="text/javascript" src="css/bootstrap/bootstrap.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="css/css/layout.css" />
+	<link type="text/css" rel="stylesheet" href="css/css/contact/contact.css" />
+	<link type="text/css" rel="stylesheet" href="css/css/news/news.css" />
+
+	<script type="text/javascript" src="css/fancybox/jquery.fancybox.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/fancybox/jquery.fancybox.css" media="screen" />
+
+	<link rel="stylesheet" href="css/css/flexslider/flexslider.css" type="text/css" media="screen" />
+	<script src="css/css/flexslider/modernizr.js"></script>
+	<script src="css/css/flexslider/jquery.flexslider.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="css/css/flexisel/style.css" />
+	<script type="text/javascript" language="javascript" src="css/css/flexisel/jquery.flexisel.js"></script>
+	<script type="text/javascript" language="javascript" src="css/js/jquery.elevatezoom.js"></script>
+
+
+	<link type="text/css" rel="stylesheet" href="css/css/slick/slick.css" />
+	<script type="text/javascript" src="css/css/slick/slick.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/css/slick/slick-theme.css">
+
+	<link type="text/css" rel="stylesheet" href="css/css/simplyscroll/jquery.simplyscroll.css" />
+	<script type="text/javascript" src="css/css/simplyscroll/jquery.simplyscroll.js"></script>
+
+	<script type="text/javascript" language="javascript" src="css/js/jquery.mobilemenu.js"></script>
+	<!--	datetimepicker -->
+	<script type="text/javascript" src="css/datepicker/bootstrap-datepicker.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/datepicker/bootstrap-datepicker.min.css" />
+	
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#mn-Array").parent().addClass('active');
+		//menu mobile
+		$('.taskbar-m .btn-m').mobilemenu();
+
+		$('.flexslider').flexslider({
+			animation: "fade",
+			directionNav: false,
+			start: function(slider){
+			  $('body').removeClass('loading');
+			}
+		});
+		$('.gotop').click(function(event) {
+			event.preventDefault();
+
+			$('html, body').animate({scrollTop: 0}, 300);
+		})
+
+		$("a[rel=example_group]").fancybox();
+		$('ul.nav_ppage li a').each(function() {
+			$(this).click(function() {
+				$('ul.nav_ppage li a').removeClass('active');
+				$(this).addClass('active');
+				box_show = $(this).attr('href');
+				$(this).parents('div.detail_product').children('div.cbox_ppage').hide();
+				$(box_show).show();
+				return false;
+			});
+		});
+
+		$('#zoom_01').elevateZoom({
+			zoomType: "inner",
+			cursor: "crosshair",
+			zoomWindowFadeIn: 500,
+			zoomWindowFadeOut: 750
+		});
+
+		var document_w = $(document).width();
+
+		$('.body_bg .left ._box > p').click(function() {
+			if (document_w < 768) {
+				$(this).next().toggle('medium');
+			}
+		});
+
+		if (document_w > 992) {
+			$('.body_bg .right').css('min-height', $('.body_bg').height());
+		}
+		$("#scroller").simplyScroll();
+		var contact_footer=$('.contact_footer').height();
+
+
+		if (document_w < 992) {
+			$('.menu_left>li>ul>li> i').click(function(event) {
+				$(this).parent().children('ul').slideToggle();
+			})
+			
+		}
+		var height_h=$('.header').height()+$('.image_title').height()+$('.full_image').height()+$('.brief_product').height()+$('.booking_tour').height();
+		rightp= $('.right_product').height();
+		cp= $('.content').height();
+//		alert(cp);
+//		alert(rightp);
+		$(window).scroll(function(){
+			if (document_w < 992){
+				if($(this).scrollTop()>=height_h){
+					$('.gotoform').show();
+				}
+				else $('.gotoform').hide();
+			}
+
+			if (document_w > 767) {
+				var ss='';
+				if(ss!=''){
+					var booking_form= $('.right_product .booking_form').offset().top;
+					var left_product= $('.left_product').offset().top;
+					var height_left= $('.content').height();
+					var height_right= $('.right_product').height();
+					var height_left= height_left-350;
+					if($(this).scrollTop()>left_product){
+						if($(this).scrollTop()>height_left){
+							$('.right_product>div').removeClass('fix');
+							$('.right_product').addClass('fix_pos');
+							var fix_h=cp-rightp-60;
+							$('.right_product').css('top',fix_h+'px')
+						}
+						else{
+							$('.right_product>div').addClass('fix');
+							$('.right_product').removeClass('fix_pos');
+							$('.right_product').css('top',0)
+						}
+
+					}
+					else {
+						$('.right_product>div').removeClass('fix');
+						$('.right_product').css('top',0)
+					}
+				}
+				
+			}
+			if (document_w > 992) {
+				var ss=$('.header').height()+$('.top').height();
+				if($(this).scrollTop()>ss){
+					$('.header').addClass('fix_header');
+
+				}
+				else {
+					$('.header').removeClass('fix_header');
+				}
+			}
+		});
+		
+//		var item_length = $('.hot_wrap > div').length - 1;
+		$('.hot_wrap').slick({
+			dots: false,
+			infinite: true,
+			autoplay:true,
+			speed: 1000,
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			arrows: false,
+			responsive: [
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 1,
+						ettings: "unslick"
+					}
+				}
+				// You can unslick at a given breakpoint now by adding:
+				// settings: "unslick"
+				// instead of a settings object
+			]
+		});
+		$('.txtkeyword').closest('body').click(function() {
+//			alert(123);
+			if($( ".position" ).hasClass( "show" )==true)
+				$('.position').removeClass('show');
+		});
+		$('.txtkeyword').click(function() {
+			$('.position').addClass('show');
+//			event.stopPropagation();
+			return false;
+		});
+		$( ".txtkeyword" ).keyup(function() {
+			var text=$(this).val();
+			var path=$(this).attr('data-load');
+			var type=$(this).attr('data-num');
+			$.ajax({
+				method: "GET",
+				url: path,
+				data: { text:text, type:type},
+				success: function(data) {
+					$('.position ').html('');
+					if (data){
+						$('.position').append(data);
+					}
+				},
+			});
+		});
+
+		$('.datepicker').datepicker({
+			format: "dd-mm-yyyy",
+			startDate: '-0d',
+			autoclose: true,
+			language: 'vi'
+		});
+		$('.menu-m').css('height', $(window).height());
+		$(window).scroll(function(){
+			if (document_w < 992){
+				$('.menu-m').css('top',$(this).scrollTop());
+				if($('.wrapper ' ).hasClass( "wrapper-m" )==true){
+					$('.taskbar-m').css({'top':$(this).scrollTop(),'position':'absolute'});
+				}
+				else{
+					$('.taskbar-m').css({'top':0,'position':'fixed'});
+				}
+			}
+
+		});
+	});
+	$.fn.datepicker.dates['vi'] = {
+		days: ["Chủ Nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"],
+		daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+		daysMin: ["Hai", "Ba", "Tư", "Năm", "Sáu", "Bảy", "CN"],
+		months: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
+		monthsShort: ["Th. 1", "Th. 2", "Th. 3", "Th. 4", "Th. 5", "Th. 6", "Th. 7", "Th. 8", "Th. 9", "Th. 10", "Th. 11", "Th. 12"],
+		today: "Hôm nay",
+		clear: "Xóa",
+//		format: "mm/dd/yyyy",
+//		titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+//		weekStart: 0
+	};
+	</script>
+
+</head>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5a66a5834b401e45400c4d73/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script--><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script><body >
+
+
+	<!-- Begin wrapper -->
+	<div class="wrapper animate">
+		<!-- Begin menu-m -->
+		<div class="menu-m">
+							<ul>
+											<li><a href="http://haiphongtoserco.com.vn/tour-trong-nuoc-t11.html">Tour trong nước</a>
+													</li>
+												<li><a href="http://haiphongtoserco.com.vn/tour-nuoc-ngoai-t10.html">Tour nước ngoài</a>
+													</li>
+												<li><a href="/khach-san-l26.html">Dịch vụ</a>
+							<span></span>								<ul class="one">
+									<li><a href="/lam-visa-l23.html"><i class="fa fa-angle-right"></i> Visa</a>
+																				</li><li><a href="/thue-xe-l21.html"><i class="fa fa-angle-right"></i> Thuê xe</a>
+																				</li><li><a href="/to-chuc-su-kien-l22.html"><i class="fa fa-angle-right"></i> Tổ chức sự kiện</a>
+																				</li>								</ul>
+														</li>
+												<li><a href="http://haiphongtoserco.com.vn/khach-san/manoir-des-arts-hotel-n82.html">Khách sạn</a>
+							<span></span>								<ul class="one">
+									<li><a href="/khach-san-l26.html"><i class="fa fa-angle-right"></i> Khuyến Mại</a>
+																				</li>								</ul>
+														</li>
+												<li><a href="/tin-tuc-l24.html">Blog du lịch</a>
+													</li>
+												<li><a href="/">Trang chủ</a>
+													</li>
+												<li><a href="/gioi-thieu-ve-chung-toi-a8.html">Giới thiệu</a>
+													</li>
+												<li><a href="/contact.html">Liên hệ</a>
+													</li>
+												<li><a href="/tuyen-dung-l25.html">Tuyển dụng</a>
+													</li>
+										</ul>
+						</div>
+		<!-- End menu-m -->
+
+
+		<!-- Begin taskbar-m -->
+		<div class="visible-xs visible-sm task-absolute">
+			<div class="container">
+				<div class="taskbar-m">
+				<span>
+					<button type="button" class="btn-m" ></button>
+					<i class="fa fa-reorder"></i>
+				</span>
+					<div class="right_top ">
+						<a class="email" href="mailto:hptsc@haiphongtoserco.com.vn"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> hptsc@haiphongtoserco.com.vn</a>
+						<a class="email hidden-xs " href="mailto:sales@haiphongtoserco.com.vn"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> sales@haiphongtoserco.com.vn</a>
+						<a class="hotline" href="tel:0946 097 999 - 0987.062.568 ">0946 097 999 - 0987.062.568 </a>
+					</div>
+				</div>
+				<div class="padding-m"></div>
+			</div>
+
+		</div>
+		<div class="top hidden-xs hidden-sm">
+			<div class="container">
+				<p class="col-md-5 col-lg-4 slogan">Công ty cổ phần du lịch và dịch vụ Hải Phòng</p>				<div class="right_top col-md-7 col-lg-8">
+					<a class="email" href="mailto:hptsc@haiphongtoserco.com.vn"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> hptsc@haiphongtoserco.com.vn</a>
+					<a class="email hidden-xs hidden-sm " href="mailto:sales@haiphongtoserco.com.vn"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> sales@haiphongtoserco.com.vn</a>
+					<a class="hotline" href="tel:0946 097 999 - 0987.062.568 ">0946 097 999 - 0987.062.568 </a>
+				</div>
+			</div>
+		</div>
+		<!-- Begin header -->
+		<div class="header">
+			<div class="container">
+				<a class="logo col-md-2" href="/"><img src="images/contact/4596logo-toserco5.png" alt="Công ty cổ phần du lịch và dịch vụ Hải Phòng Top những địa điểm nổi bật" /></a>
+				<div class="menu hidden-xs hidden-sm col-md-10">
+					<ul>
+						<li ><a id="mn-104" href="http://haiphongtoserco.com.vn/tour-trong-nuoc-t11.html">Tour trong nước</a></li><li ><a id="mn-105" href="http://haiphongtoserco.com.vn/tour-nuoc-ngoai-t10.html">Tour nước ngoài</a></li><li class='has_child'><a id="mn-53" href="/khach-san-l26.html">Dịch vụ</a><ul><li><a href="/lam-visa-l23.html">Visa</a></li><li><a href="/thue-xe-l21.html">Thuê xe</a></li><li><a href="/to-chuc-su-kien-l22.html">Tổ chức sự kiện</a></li></ul></li><li class='has_child'><a id="mn-93" href="http://haiphongtoserco.com.vn/khach-san/manoir-des-arts-hotel-n82.html">Khách sạn</a><ul><li><a href="/khach-san-l26.html">Khuyến Mại</a></li></ul></li><li ><a id="mn-91" href="/tin-tuc-l24.html">Blog du lịch</a></li>						<li class="extend"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a><ul class="dropdown-menu"><li ><a href="/">Trang chủ</a></li><li ><a href="/gioi-thieu-ve-chung-toi-a8.html">Giới thiệu</a></li><li ><a href="/contact.html">Liên hệ</a></li><li ><a href="/tuyen-dung-l25.html">Tuyển dụng</a></li></ul></li>					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End header -->
+		<!-- Begin body_box -->
+		
+<h2>Error 404</h2>
+
+<div class="error">
+Không thể giải quyết yêu cầu &quot;css/fonts/glyphicons-halflings-regular.woff&quot;.</div>
+		
+		<!-- End body_box -->
+		<!-- Begin footer -->
+		<div class="footer">
+			<div class="container">
+				<div class="footer_left">
+					<div class="f_left_top">
+						<div class="about col-xs-12 col-md-4">
+							<a href="/gioi-thieu-ve-chung-toi-a8.html"><img src="images/contact/311logo.png" alt="Công ty cổ phần du lịch và dịch vụ Hải Phòng" /></a>							<div class="brief">Haiphong Toserco có một đội ngũ trẻ, tâm huyết với nghề, trình độ chuyên môn cao,đam mê khám phá du lịch. Chính vì điều đó, Haiphong Toserco được nhiều khách hàng biết đến là một trong những nhà cung cấp chương trình tour và dịch vụ ổn định tốt nhất tại Việt nam.
+<a class="more1" href="/gioi-thieu-ve-chung-toi-a8.html">Xem thêm</a></div>
+							<div class="social ">
+								<a target="_blank" class="facebook_icon" href="https://www.facebook.com/congtydulich.haiphongtoserco/"><img src="/images/facebook.png" alt="facebook" /></a>								<a target="_blank" class="youtube_icon"><img src="/images/youtube.png" alt="gooogle" /></a>								<a target="_blank" class="twitter_icon"><img src="/images/twitter.png" alt="twitter" /></a>							</div>
+						</div>
+															<div class="menu_ft col-xs-12 col-sm-6 col-md-4">
+										<p class="title_ft avenir">Thông tin cần biết</p>
+										<div>
+										<a href="#">Quy chế hoạt động</a><a href="#">Điều kiện & điều khoản</a><a href="#">Câu hỏi thường gặp</a>										</div>
+									</div>
+																		<div class="menu_ft col-xs-12 col-sm-6 col-md-4">
+										<p class="title_ft avenir">Đối tác liên kết</p>
+										<div>
+										<a href="#">VietNam Airlines</a><a href="#">VN Express</a>										</div>
+									</div>
+																					</div>
+					<div class="f_left_bottom col-xs-12">
+						<p>HAIPHONG TOSERCO © 2017 - Hệ thống Tours trực tuyến hàng đầu Việt Nam</p>
+														<p>Hải Phòng: Số 40 Trần Quang Khải, Hồng Bàng, Hải Phòng </p>
+														<p>Hotline: <a href="tel:0225 3747332 - 0225 3746346 ">0225 3747332 - 0225 3746346 </a> - <a href="tel:0946 097 999 - 0987.062.568 ">0946 097 999 - 0987.062.568 </a></p>
+						<a href="mailto:hptsc@haiphongtoserco.com.vn">Email: hptsc@haiphongtoserco.com.vn</a><br>
+						<p><a href="http://vinaweb.vn" target="_blank" title="Thiết kế web">Thiết kế web</a> bởi Vinaweb</p>
+					</div>
+				</div>
+
+				<div class="footer_right">
+					<p class="title_ft avenir">Fanpage</p>
+					<div class="fb-page" data-href="https://www.facebook.com/congtydulich.haiphongtoserco/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+						<div class="fb-xfbml-parse-ignore">
+							<blockquote cite="https://www.facebook.com/congtydulich.haiphongtoserco/">
+								<a href="https://www.facebook.com/congtydulich.haiphongtoserco/">Công ty cổ phần du lịch và dịch vụ Hải Phòng</a>
+							</blockquote>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- End footer -->
+
+
+
+	</div>
+	<!-- End wrapper -->
+	
+</body>
+</html>
